@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400;1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s;
+  color: #000;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+#nav {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background: #fff;
+  color: #fff;
+}
+#nav .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+#nav .navbar .navbar-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+#nav .navbar .auth {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#nav .navbar .auth .login {
+  border: 1px solid #ece3ce;
+  border-radius: 50px;
+  padding: 12px 46px;
+  transition: all 0.4s;
+}
+#nav .navbar .auth .login:hover {
+  border-color: #3a4d39;
+  transition: all 0.4s;
+}
+#nav .navbar .auth .register {
+  border-radius: 50px;
+  padding: 12px 46px;
+  background-color: #0c356a;
+  color: #fff;
+  transition: all 0.4s;
+}
+#nav .navbar .auth .register:hover {
+  transition: all 0.4s;
+  background-color: #0174be;
+}
+#nav .navbar .auth .burger {
+  display: none;
+}
+#nav .navbar .logo a {
+  font-size: 22px;
+}
+
+#information {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+#information .accordion {
+  border-radius: 10px;
+  width: 800px;
+  padding: 25px 15px;
+  color: #fff;
+  background: rgb(28, 25, 82);
+  background: linear-gradient(90deg, rgb(28, 25, 82) 13%, rgb(57, 94, 39) 82%);
+}
+#information .accordion .accordion-item {
+  padding: 10px 0;
+}
+#information .accordion .accordion-item .accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 25px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+#information .accordion .accordion-item .accordion-title {
+  padding: 10px 0;
+  display: none;
+  transition: all 0.6s;
+}
+#information .accordion .accordion-item .accordion-title.show {
+  display: block;
+  transition: all 0.6s;
+  animation: openAccordion 0.6s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+#information .accordion .accordion-item .arrows {
+  margin-left: auto;
+}
+#information .accordion .accordion-item .arrows .arrow-up {
+  cursor: pointer;
+}
+#information .accordion .accordion-item .arrows .arrow-up .fa-arrow-up {
+  transition: all 0.3s;
+}
+#information .accordion .accordion-item .arrows .arrow-up .fa-arrow-up.rotate {
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+
+@keyframes openAccordion {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+@media screen and (max-width: 996px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  #nav .navbar .navbar-items {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
+    padding: 25px;
+    border-radius: 0 0 30px 30px;
+    background: #fff;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    z-index: 0;
+    width: 0%;
+    transition: all 0.2s ease-in-out;
+    transform: translateX(-100px);
+  }
+  #nav .navbar .navbar-items.is-active {
+    width: 100%;
+    transform: translateX(0);
+    transition: all 0.2s ease-in-out;
+  }
+  #nav .navbar .auth .login {
+    padding: 12px 26px;
+  }
+  #nav .navbar .auth .register {
+    padding: 12px 26px;
+  }
+  #nav .navbar .auth .burger {
+    display: block;
+    cursor: pointer;
+    margin-left: 15px;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: none;
+  }
+  #nav .navbar .auth .burger .fa-bars,
+  #nav .navbar .auth .burger .fa-x {
+    font-size: 20px;
+    display: none;
+  }
+  #nav .navbar .auth .burger .fa-bars.active,
+  #nav .navbar .auth .burger .fa-x.active {
+    display: block;
+  }
+}/*# sourceMappingURL=style.css.map */
